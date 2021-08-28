@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+
+    <div class="list-container">
+
+        <img src="/images/icon-moon.svg" class="moon" alt="moon">
+        <h1>TODO</h1>
+        <form class="input-container">
+            <input type="name" class="text" id='input' placeholder="Create a new todo...">
+        </form>
+
+        <div class="todo-container">
+            <ul class="todo-list"></ul>
+        </div>
+
+        <div class="tasks">
+            <span class="items-left"><strong>0</strong> items left</span>
+
+            <div class="links">
+                <a class="link" href="#" id="all">All</a>
+                <a class="link" href="#" id="completed">Completed</a>
+                <a class="link" href="#" id="active">Active</a>
+            </div>
+
+            <span class="clear-completed">Clear Completed</span>
+        </div>
+
+        <p class="drag">Drag and drop to reorder list</p>
+    </div>
+
+
+</body>
+</html>
+

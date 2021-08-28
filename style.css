@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    font-family: 'Josefin', sans-serif;
+}
+/* list container */
+.list-container {
+    background: url('images/bg-desktop-light.jpg') no-repeat top hsl(236, 33%, 92%);
+    height: 80vh;
+    width: 850px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0 5px 10px rgba(154, 160, 185, 0.5), 
+    0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* img */
+.moon {
+    position: absolute;
+    top: 13%;
+    right: 20%;
+    transform: translateY(-50%, -50%);
+    width: 1.3rem;
+    cursor: pointer;
+}
+h1 {
+    padding-top: 3rem;
+    color: hsl(0, 0%, 98%);
+    letter-spacing: 0.5rem;
+}
+
+/* input container */
+.input-container {
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3rem;
+    background-color: hsl(0, 0%, 98%);
+    padding: 1rem;
+    border-radius: 0.3rem;
+    margin-bottom: 3rem;
+}
+
+/* checkbox */
+.check {
+    width: 1.3rem;
+    height: 1.3rem;
+    background-color: hsl(0, 0%, 98%);
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    transition: 0.3s linear;
+}
+.check:hover {
+    border-color: hsl(236, 9%, 61%);
+}
+.check::after {
+    content: "✓";
+    width: 0.75rem;
+    height: 0.75rem;
+    color: white;
+}
+.check:checked {
+    background: linear-gradient(97deg, rgba(87,221,255,1) , 31%, rgba(192,88,243,1));
+}
+
+/* text of input container */
+.text {
+    border: none;
+    width: 100%;
+    text-align: left;
+    font-size: 1.2rem;
+    padding-left: 1rem;
+    color: hsl(235, 19%, 35%);
+}
+.text::placeholder {
+    color: hsl(236, 9%, 61%);
+}
+.text:focus {
+    outline: none;
+}
+
+/* task container */
+.todo-item {
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: hsl(0, 0%, 98%);
+    padding: 1rem;
+    border-bottom: 1px solid hsl(236, 33%, 92%);
+    position: relative;
+    cursor: move;
+    transition: transform 1s ease, opacity 1s ease;
+}
+/* first child of tasks container */
+.input-container+.tasks-container {
+    border-top-left-radius: 0.3rem;
+    border-top-right-radius: 0.3rem;
+}
+/* text of tasks container */
+.span-text {
+    border: none;
+    width: 100%;
+    text-align: left;
+    padding-left: 1rem;
+    color: hsl(235, 19%, 35%);
+    font-size: 1.2rem;
+}
+/* icon */
+.fa-times{
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding-right: .5rem;
+    color: hsl(236, 9%, 61%);
+    transition: 0.3s linear;
+    /* opacity: 0; */
+}
+.fa-times:hover{
+    color: hsl(235, 19%, 35%);
+}
+
+/* when todo is deleted  */
+.fall {
+    transform: translateY(10rem) rotateZ(20deg);
+    opacity: 0;
+}
+
+/* tasks --> filtering */
+.tasks {
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: hsl(0, 0%, 98%);
+    padding: 0.5rem;
+    color: hsl(236, 9%, 61%);
+    font-size: 0.8rem;
+    border-bottom-left-radius: 0.3rem;
+    border-bottom-right-radius: 0.3rem;
+    display: none;
+}
+
+.items-left{
+    font-size: 1rem;
+}
+
+.items-left strong{
+    font-size: 1.1rem;
+}
+/* links container */
+.links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35%;
+    flex: 1;
+}
+/* actual links */
+.link {
+    color: hsl(236, 9%, 61%);
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+    padding: 0 0.5rem;
+    font-size: 1rem;
+}
+.link:focus {
+    color: hsl(220, 98%, 61%);
+}
+/* clear completed text */
+.clear-completed {
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    font-size: 1rem;
+}
+.link:hover, .clear-completed:hover {
+    color: hsl(235, 19%, 35%);
+}
+/* drag */
+.drag{
+    margin-top: 1rem;
+    color: hsl(235, 19%, 35%);
+    font-size: 1.2rem;
+    display: none;
+    transition: all 1s ease;
+}
+
+ 
+/* dark theme */
+.dark-theme{
+    background: url('images/bg-desktop-dark.jpg') no-repeat top hsl(235, 21%, 11%);
+}
+
+.dark-items{
+    background-color: hsl(235, 24%, 19%);
+    color: hsl(0, 0%, 98%);
+} 
+
+.dark-link:hover{
+    color: hsl(0, 0%, 98%);
+}
+
+.dark-border:hover{
+    border-color: rgba(192,88,243,1);
+}
+
+.dark-icon{
+    color: hsl(0, 0%, 98%);
+}
+.dark-icon:hover{
+    color: rgba(192,88,243,1);
+}
+
+/* toggle classes */
+.completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+/* media queries */
+@media (max-width: 860px) {
+    .list-container {
+        width: 450px;
+    }
+    .input-container {
+        width: 350px;
+    }
+    .todo-item {
+        width: 350px;
+    }
+    .tasks {
+        width: 350px;
+    }
+    .items-left {
+        font-size: 0.8rem;
+    }
+    .link{
+        font-size: 0.8rem;
+        padding: 0.25rem;
+    }
+    .clear-completed {
+        font-size: 0.8rem;
+    }
+    .drag {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 460px) {
+    .list-container{
+        width: 380px;
+    }
+}
